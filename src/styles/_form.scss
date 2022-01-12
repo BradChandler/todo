@@ -1,0 +1,18 @@
+.form-standard {
+  @include grid($cols: 1fr, $row-gap: 12px, $just: left);
+  label {
+    @include grid($cols: 1fr, $row-gap: 6px, $just: left);
+    font-weight: bold;
+    width: 100%;
+  }
+  .section {
+    @include grid($cols: 1fr, $row-gap: 12px);
+  }
+}
+.filter-grid {
+  @include grid($cols: 1fr auto, $col-gap: 20px, $just: null, $align: center);
+  > :nth-child(1) {
+    width: 100%;
+    max-width: 400px;
+  }
+}

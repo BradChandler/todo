@@ -1,0 +1,21 @@
+.card {
+  padding: 16px;
+  border-radius: 6px;
+  border: 2px solid $blue;
+  transition: all 0.25s ease-in-out;
+  background-color: #fff;
+  &:hover {
+    box-shadow: 0px 0px 6px 0px $black;
+  }
+}
+.stat-card {
+  max-width: 200px;
+  margin: 20px;
+}
+.task-card {
+  @include grid($cols: auto 1fr, $col-gap: 16px, $just: null, $align: null);
+}
+.add-task-card {
+  padding: 8px 16px;
+  background-color: #eee;
+}

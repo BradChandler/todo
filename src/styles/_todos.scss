@@ -1,0 +1,13 @@
+#todos {
+  li {
+    @include grid(
+      $cols: 1fr auto,
+      $col-gap: 10px,
+      $just: flex-start,
+      $align: center
+    );
+  }
+  .todo-item {
+    @include grid($cols: 20px 1fr, $col-gap: 8px);
+  }
+}

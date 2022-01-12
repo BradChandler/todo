@@ -1,0 +1,26 @@
+.animate-flash {
+  animation: flash 1s ease-in-out infinite;
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-in;
+}
+
+@keyframes flash {
+  0% {
+    background-color: $lt-blue;
+  }
+  50% {
+    background-color: $blue;
+  }
+  100% {
+    background-color: $lt-blue;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

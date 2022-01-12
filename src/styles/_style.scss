@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px 12px;
+  border: 1px solid $lt-blue;
+  background-color: #eee;
+  &:focus {
+    outline: 1px solid $blue;
+  }
+}
+textarea {
+  resize: none;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  &:focus {
+    outline: transparent;
+  }
+  &:checked {
+    background-color: $blue;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
