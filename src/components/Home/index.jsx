@@ -1,4 +1,4 @@
-import Stats from "./Stats";
+import Stats from "../common/Stats";
 import Filters from "../common/Filters";
 import Tasks from "../common/Tasks";
 

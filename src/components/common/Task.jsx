@@ -3,7 +3,7 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Task({ todo }) {
   return (
-    <li class="card task-card width__100">
+    <li className="card task-card width__100">
       <label htmlFor="complete-task">
         <input type="checkbox" id="complete-task" name="complete-task" />
       </label>

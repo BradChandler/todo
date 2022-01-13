@@ -9,8 +9,10 @@
   }
 }
 .stat-card {
-  max-width: 200px;
+  width: 100%;
   margin: 20px;
+  user-select: none;
+  cursor: grab;
 }
 .task-card {
   @include grid($cols: auto 1fr, $col-gap: 16px, $just: null, $align: null);

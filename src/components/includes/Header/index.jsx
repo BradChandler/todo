@@ -1,23 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header({ navOpen, setNavOpen }) {
+export default function Header() {
   return (
-    <header
-      className={`bg__dk-orange padding__xxs ${
-        navOpen ? "header-active" : null
-      }`}
-    >
+    <header className="padding__xxs">
       <section className="container flex__between">
-        <FontAwesomeIcon
-          icon={navOpen ? faTimes : faBars}
-          size="lg"
-          className="text__white pointer"
-          role="button"
-          aria-pressed={navOpen}
-          onClick={() => setNavOpen(!navOpen)}
-        />
-        <h1 className="text__center text__md text__white">Todo List</h1>
+        <h1 className="text__center text__md text__blue text__bold">
+          Todo List
+        </h1>
         <FontAwesomeIcon
           icon={faPlus}
           size="lg"

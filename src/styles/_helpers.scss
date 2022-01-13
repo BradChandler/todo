@@ -283,3 +283,6 @@
 .modal {
   @include pos-abs($pos: fixed, $width: 100vw, $height: 100vh, $z: 2);
 }
+.over__hidden {
+  overflow: hidden;
+}

@@ -1,3 +1,10 @@
+#root {
+  @include grid($cols: 48px 1fr, $just: null, $align: null);
+}
+main {
+  overflow-x: hidden;
+}
+
 .container {
   width: 100%;
   padding: 0 16px;
@@ -11,19 +18,22 @@
 }
 
 @media (min-width: $md) {
+  #root {
+    grid-template-columns: 232px 1fr;
+  }
   .container {
-    max-width: 680px;
+    max-width: 560px;
   }
 }
 
 @media (min-width: $lg) {
   .container {
-    max-width: 800px;
+    max-width: 600px;
   }
 }
 
 @media (min-width: $xl) {
   .container {
-    max-width: 1000px;
+    max-width: 760px;
   }
 }

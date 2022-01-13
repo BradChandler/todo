@@ -1,0 +1,12 @@
+.slider {
+  @include grid($cols: 40px 1fr 40px);
+  .slides {
+    display: grid;
+    justify-items: center;
+  }
+  .slide {
+    width: 100%;
+    padding: 16px 20px;
+    transition: transform 0.25s ease-in-out;
+  }
+}
