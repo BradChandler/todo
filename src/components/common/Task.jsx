@@ -1,36 +1,75 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faThumbtack,
+  faCalendar,
+  faCaretSquareDown,
+} from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
-export default function Task({ todo }) {
+import { useTasks, UPDATE_TASK } from "../../state/TaskProvider";
+
+export default function Task({ task }) {
+  const [tasks, dispatch] = useTasks();
+
+  const handleSetStatus = () => {
+    let delta = {
+      ...task,
+      is_completed: task.is_completed ? false : true,
+    };
+    dispatch({ type: UPDATE_TASK, task: delta });
+  };
+
   return (
-    <li className="card task-card width__100">
-      <label htmlFor="complete-task">
-        <input type="checkbox" id="complete-task" name="complete-task" />
+    <li className="task width__100 flex__left grid__col-sm">
+      <label>
+        <input
+          type="checkbox"
+          role="button"
+          aria-pressed={task.is_completed}
+          defaultChecked={task.is_completed}
+          onChange={handleSetStatus}
+        />
       </label>
-      <div className="grid__one grid__row-sm grid__just-null">
-        <div className="flex__between">
-          <h4 className="text__bold text__md">Todo Title</h4>
-          <div className="flex__between ml-xs">
-            <FontAwesomeIcon
-              icon={faEdit}
-              size="1x"
-              className="text__blue pointer mr-xs"
-              role="button"
-              aria-pressed={true}
-            />
-            <FontAwesomeIcon
-              icon={faTrash}
-              size="1x"
-              className="text__dk-orange pointer"
-              role="button"
-              aria-pressed={true}
-            />
-          </div>
+      <div className="grid__one grid__row-xs grid__just-null">
+        <div className="flex__left grid__col-xs">
+          <h3
+            className={`text__bold text__regular ${
+              task.is_completed ? "text__strike" : ""
+            }`}
+          >
+            {task.title}
+          </h3>
+          <FontAwesomeIcon
+            icon={faCaretSquareDown}
+            size="lg"
+            className="text__green"
+          />
         </div>
-        <p>
-          A description of this specific task appears here and can be changed
-          later if necessary.
-        </p>
+        <div className="flex__left grid__col-xs">
+          <p className="task-clamp-desc text__sm">{task.notes}</p>
+        </div>
+        <div className="flex__left grid__col-sm">
+          {task.importance && (
+            <span
+              className={`task-priority priority-${task.importance}`}
+              title={`Priority ${task.importance}`}
+            ></span>
+          )}
+          {task.due_date && (
+            <span className="flex__left grid__col-xs">
+              <FontAwesomeIcon icon={faCalendar} className="text__blue" />
+              <span>
+                {moment(task.due_date, "MMMM D, YYYY").format("MMM D")}
+              </span>
+            </span>
+          )}
+          <FontAwesomeIcon
+            icon={faThumbtack}
+            className="text__blue"
+            role="button"
+            aria-pressed={true}
+          />
+        </div>
       </div>
     </li>
   );

@@ -1,13 +1,27 @@
-#todos {
-  li {
-    @include grid(
-      $cols: 1fr auto,
-      $col-gap: 10px,
-      $just: flex-start,
-      $align: center
-    );
-  }
-  .todo-item {
-    @include grid($cols: 20px 1fr, $col-gap: 8px);
-  }
+.task {
+  border-bottom: 2px solid rgb(170, 170, 170, 0.75);
+  padding: 10px 4px;
+  border-radius: 6px;
+}
+.task-priority {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.task-clamp-desc {
+  margin-top: -8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.priority-1 {
+  background-color: $dk-orange;
+}
+.priority-2 {
+  background-color: $lt-orange;
+}
+.priority-3 {
+  background-color: $yellow;
 }

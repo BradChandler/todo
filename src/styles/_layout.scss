@@ -2,18 +2,18 @@
   @include grid($cols: 48px 1fr, $just: null, $align: null);
 }
 main {
-  overflow-x: hidden;
+  position: relative;
 }
 
 .container {
   width: 100%;
-  padding: 0 16px;
+  padding: 0 8px;
   margin: auto;
 }
 
 @media (min-width: $sm) {
   .container {
-    max-width: 500px;
+    max-width: 540px;
   }
 }
 
@@ -22,18 +22,21 @@ main {
     grid-template-columns: 232px 1fr;
   }
   .container {
-    max-width: 560px;
+    max-width: 700px;
   }
 }
 
 @media (min-width: $lg) {
-  .container {
-    max-width: 600px;
+  #root {
+    grid-template-columns: 340px 1fr;
   }
+  // .container {
+  //   max-width: 600px;
+  // }
 }
 
-@media (min-width: $xl) {
-  .container {
-    max-width: 760px;
-  }
-}
+// @media (min-width: $xl) {
+//   .container {
+//     max-width: 760px;
+//   }
+// }

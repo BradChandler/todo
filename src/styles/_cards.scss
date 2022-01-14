@@ -14,10 +14,3 @@
   user-select: none;
   cursor: grab;
 }
-.task-card {
-  @include grid($cols: auto 1fr, $col-gap: 16px, $just: null, $align: null);
-}
-.add-task-card {
-  padding: 8px 16px;
-  background-color: #eee;
-}

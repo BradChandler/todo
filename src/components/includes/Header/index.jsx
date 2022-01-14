@@ -1,16 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   return (
     <header className="padding__xxs">
       <section className="container flex__between">
-        <h1 className="text__center text__md text__blue text__bold">
-          Todo List
-        </h1>
+        <label htmlFor="search-todo-list" className="flex__left mr-xs">
+          <FontAwesomeIcon icon={faSearch} size="lg" className="text__blue" />
+          <input
+            type="text"
+            className="header-search"
+            name="search-todo-list"
+            id="search-todo-list"
+            placeholder="Search List"
+          />
+        </label>
         <FontAwesomeIcon
-          icon={faPlus}
-          size="lg"
+          icon={faPlusCircle}
+          size="2x"
           className="text__lt-blue pointer"
           role="button"
           aria-pressed={true}

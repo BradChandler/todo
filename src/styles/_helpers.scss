@@ -9,6 +9,12 @@
 .text__light {
   font-weight: lighter;
 }
+.text__strike {
+  text-decoration: line-through;
+}
+.text__underline {
+  text-decoration: underline;
+}
 .text__black {
   color: $black;
 }
@@ -89,6 +95,9 @@
 }
 .flex__around {
   @include flex($just: space-around, $align: center);
+}
+.flex__left {
+  @include flex($just: flex-start, $align: center);
 }
 .flex__col {
   flex-direction: column;
