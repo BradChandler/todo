@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header() {
+export default function Header({ formToggled, setFormToggled }) {
   return (
     <header className="padding__xxs">
       <section className="container flex__between">
@@ -21,6 +21,7 @@ export default function Header() {
           className="text__lt-blue pointer"
           role="button"
           aria-pressed={true}
+          onClick={() => setFormToggled(!formToggled)}
         />
       </section>
     </header>

@@ -11,6 +11,15 @@ export default function Tasks() {
     return tasks.filter((t) => t.is_completed);
   };
 
+  if (!filteredTasks() || filteredTasks().length <= 0)
+    return (
+      <section className="padding__sm">
+        <div className="flex__left grid__col-sm padding__xs">
+          <h2 className="text__bold text__blue">No Completed Tasks</h2>
+        </div>
+      </section>
+    );
+
   return (
     <section className="padding__sm">
       <div className="flex__left grid__col-sm padding__xs">

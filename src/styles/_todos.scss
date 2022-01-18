@@ -10,18 +10,41 @@
   border-radius: 50%;
 }
 .task-clamp-desc {
-  margin-top: -8px;
+  // margin-top: -8px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.priority-1 {
-  background-color: $dk-orange;
+.task-actions {
+  border-radius: 4px;
+  @include pos-abs($top: calc(100% + 4px), $z: 2);
+  background-color: #eee;
+  box-shadow: 0px 0px 2px 1px #aaa;
+  li {
+    padding: 10px 12px;
+    transition: background-color 0.15s ease-in-out;
+    color: $dk-blue;
+    font-weight: 600;
+    min-width: max-content;
+    width: 100%;
+    &:hover {
+      background-color: darken(#eee, 10%);
+    }
+  }
 }
-.priority-2 {
-  background-color: $lt-orange;
-}
-.priority-3 {
-  background-color: $yellow;
+.task-form {
+  @include pos-abs(
+    $pos: fixed,
+    $left: 48px,
+    $width: calc(100% - 48px),
+    $height: 100vh,
+    $z: 2
+  );
+  overflow-y: scroll;
+  .task-form--header {
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid rgb(170, 170, 170, 0.5);
+  }
 }

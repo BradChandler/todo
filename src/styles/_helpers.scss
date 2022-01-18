@@ -21,7 +21,7 @@
 .text__white {
   color: #fff;
 }
-.text__db-blue {
+.text__dk-blue {
   color: $dk-blue;
 }
 .text__blue {
@@ -41,6 +41,9 @@
 }
 .text__lt-orange {
   color: $lt-orange;
+}
+.text__yellow {
+  color: $yellow;
 }
 .text__sm {
   font-size: $text-sm;
@@ -62,6 +65,9 @@
 /*=====================*/
 .bg__black {
   background-color: $black;
+}
+.bg__white {
+  background-color: #fff;
 }
 .bg__db-blue {
   background-color: $dk-blue;

@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { TaskProvider } from "./state/TaskProvider";
 
-import Router from "./Router";
-
 import Header from "./components/includes/Header";
 import Nav from "./components/includes/Nav";
 
+import Main from "./components/Main";
+
 export default function App() {
+  const [formToggled, setFormToggled] = useState(false);
+
   return (
     <>
       <Nav />
       <main>
-        <Header />
+        <Header formToggled={formToggled} setFormToggled={setFormToggled} />
         <TaskProvider>
-          <Router />
+          <Main formToggled={formToggled} setFormToggled={setFormToggled} />
         </TaskProvider>
       </main>
     </>
